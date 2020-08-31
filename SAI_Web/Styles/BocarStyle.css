@@ -1,0 +1,37 @@
+/* roScripts
+Table Design by Mihalcea Romeo
+www.roscripts.com
+----------------------------------------------- */
+table {		
+		/*border-collapse:separate;*/
+		background:#EFF4FB;	font:0.8em/145% 'Trebuchet MS',helvetica,arial,verdana; font-size: 12px; font-weight:bold; color: #333; border-style:solid; 
+}
+
+thead th, thead td
+{
+	background: #EFF4FB; color: #FE2E2E; font: normal 9px georgia, verdana, arial, helvetica, sans-serif;
+	text-align: center; font-size: small; font-weight: bold; font-style: inherit; color: #B40404; background: #EFF4FB; 
+}
+
+.MyCalendar .ajax__calendar_container { border:1px solid #646464; background-color:Silver; color: red; }
+
+#box div { display: block; }
+#box ul { list-style-type:none; }
+#box ul li { font-family:"Trebuchet MS", Arial, Helvetica, sans-serif; font-size:11px; color:#555; text-decoration:none; list-style-type:none;}
+#box ul li label span{ text-align:right; float:left;  width:150px; line-height:16px; color:#4D4D4D; font-family:Verdana; font-size:12px;  margin-bottom:0; vertical-align:top; line-height: 24px; }
+#box label{ text-align:right; width:210px; line-height:16px; color:#4D4D4D; font-family:Verdana; font-size:12px; text-transform: capitalize; float: left; }
+#bmx div { display: block; }
+#bmx ul { list-style-type:none; }
+#bmx ul li { font-family:"Trebuchet MS", Arial, Helvetica, sans-serif; font-size:12px; color:#555; text-decoration:none; list-style-type:none;}
+#bmx ul li label span{ text-align:right; float:left;  width:150px; line-height:16px; color:#4D4D4D; font-family:Verdana; font-size:12px;  margin-bottom:0; vertical-align:top; line-height: 24px; }
+#bmx label{ text-align:right; width:210px; line-height:16px; color:#4D4D4D; font-family:Verdana; font-size:12px; text-transform: capitalize; float: left; }
+
+.niobe { -moz-box-shadow: 0 1px 5px rgba(0,0,0,0.5); -webkit-box-shadow: 0 1px 5px rgba(0,0,0,0.5); color: #555; position: relative;padding-left: 25;padding-right: 25;padding-top: 25;margin: 25px; }
+.deneb { float:left; width: 80%; position:relative;}
+.agora {float:left; width: 100%; position:relative; }
+.Aniv { position: absolute; top: 6; left: 24;
+    bottom: 777px;
+}
+
+#search #box table td tr { border-style:none; font-family:"Trebuchet MS", Arial, Helvetica, sans-serif; font-size:11px; color:#555; text-decoration:none; position:relative;}
+#search td label span{ text-align:right; float:left;  width:150px; line-height:16px; color:#4D4D4D; font-family:Verdana; font-size:12px;  margin-bottom:0; vertical-align:top; line-height: 24px; }

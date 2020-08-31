@@ -1,0 +1,39 @@
+.patternlockcontainer{ width:260px; margin:auto; background-color:#444; height:260px; -webkit-border-radius: 15px; -moz-border-radius: 15px;
+	border-radius: 15px; overflow:hidden; background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0.19, rgb(30,30,30)),
+    	color-stop(0.89, rgb(85,85,85)), color-stop(1, rgb(100,100,100)) );
+	background-image: -moz-linear-gradient( center bottom, rgb(30,30,30) 19%, rgb(85,85,85) 89%, rgb(100,100,100) 100% ); }
+.patternlockbuttoncontainer{ position:absolute; width:300px; }
+.patternlocklineshorizontalcontainer{ position:absolute; width:250px; padding:22px; }
+.patternlocklinesverticalcontainer{ position:absolute; width:260px; padding:22px; }
+.patternlocklinesdiagonalcontainer{ position:absolute; width:240px; padding:22px; }
+.patternlockbutton{ background-image:url(../Images/button.png); background-repeat:no-repeat; display:block; width:53px; height:53px; float:left; margin:16px; }
+.touched{ background-image:url(../Images/button_active.png); }
+.multiple{ background-image:url(../Images/button_active2.png); }
+.patternlocklinehorizontal{ background-image:url(../Images/line_hor.png); background-repeat:no-repeat; height:83px; width:53px; display:block;
+	float:left; margin:2px -7px 0px 38px; visibility:hidden; }
+.patternlocklinevertical{ background-image:url(../Images/line_ver.png); background-repeat:no-repeat; height:53px; width:83px; display:block;
+	float:left; margin:38px 0px -7px 3px; visibility:hidden; }
+.patternlocklinediagonalforward{ background-image:url(../Images/line_diagonal1.png); background-repeat:no-repeat; height:83px; width:83px;
+	display:block; float:left; margin:26px -26px -24px 26px; visibility:hidden; }
+.patternlocklinediagonalbackwards{ background-image:url(../Images/line_diagonal2.png); background-repeat:no-repeat; height:83px; width:83px;
+	display:block; float:left; margin:26px -26px -24px 26px; visibility:hidden; }
+	
+.loginPleca {width: 100%; background: #7B7B7B; background: -webkit-gradient(linear, left top, left bottom, from(#000), to(#8C8C8C)); background: -moz-linear-gradient(left top, left bottom, from(#000), to(#8C8C8C)); height: 48px;
+             -moz-box-shadow: 0 2px 3px rgba(0,0,0,0.5); -webkit-box-shadow: 0 2px 3px rgba(0,0,0,0.5); box-shadow: 0 2px 3px rgba(0,0,0,0.5); -webkit-border-radius: 10px 10px 0 0; -moz-border-radius: 10px 10px 0 0;
+             border-radius: 10px 10px 0 0; }
+
+.loginContent { width: 99.5%; -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5); -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5); border-width: 2px; background: #f0f0f0;
+    background: rgba(0,0,0,0.06); border: 1px solid rgba(0,0,0,0.1); box-shadow: inset 0 2px 10px rgba(0,0,0,0.1); display: block;}
+.loginFields { width: 99%;  margin: 50px;}
+.loginFields input[type="text"], input[type="password"], select { width: 80%; height: 48px; text-align: center; border: 1px solid #DDD; color: #777; font-size: 1.6em; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; box-sizing: border-box; cursor: text; }
+.loginFields input[type="submit"] { width: 40%; height: 38px; text-align: center; -moz-transition: border .25s; -webkit-transition: border .25s; -o-transition: border .25s; transition: border .25s; border: 1px solid #DDD; color: #777; font-size: 1.6em; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; box-sizing: border-box; }
+html,body { background: #123456; font-size: .80em; font-family: "Helvetica Neue", "Lucida Grande", "Segoe UI", Arial, Helvetica, Verdana, sans-serif; margin: auto; padding: 0px; color: #696969; height:100%; }
+.container { width:1000px; position:relative; margin:0 auto; padding:0 0 24px 0; font-family:"Trebuchet MS", Arial, Helvetica, sans-serif; font-size:11px; }
+.page { width: 80%;height: 100%; background-color: #fff; margin: 20px auto 0px auto; border: 1px solid #496077; vertical-align: middle;}
+
+h1, h2, h3, h4, h5, h6 { font-size: 1.5em; color: #666666; font-variant: small-caps; text-transform: none; font-weight: 200; margin-bottom: 0px; }
+h1 { font-size: 1.6em; padding-bottom: 0px; margin-bottom: 0px; }
+h2 { font-size: 1.5em; font-weight: 600; }
+h3 { font-size: 1.2em; }
+h4 { font-size: 1.1em; }
+h5, h6 { font-size: 1em; }

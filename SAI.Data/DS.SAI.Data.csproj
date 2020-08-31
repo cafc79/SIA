@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D522FCDD-0F50-4402-9BD9-954362D3B27E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DS.SAI.Data</RootNamespace>
+    <AssemblyName>DS.SAI.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>ExtendedCorrectnessRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ds_dal">
+      <HintPath>..\..\DeltaCore\DeltaCore_v2\ds_dal\bin\Debug\ds_dal.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActionRol.cs" />
+    <Compile Include="AffectationDocuments.cs" />
+    <Compile Include="Area.cs" />
+    <Compile Include="BuzonAccess.cs" />
+    <Compile Include="CatalogAccess.cs" />
+    <Compile Include="Cierre.cs" />
+    <Compile Include="classDB.cs" />
+    <Compile Include="AffectationType.cs" />
+    <Compile Include="ClassUsuario.cs" />
+    <Compile Include="Client.cs" />
+    <Compile Include="ExchangeAutorization.cs" />
+    <Compile Include="ExchangeFile.cs" />
+    <Compile Include="ExchangeFlA.cs" />
+    <Compile Include="ExchangeReview.cs" />
+    <Compile Include="FolioSeguimiento.cs" />
+    <Compile Include="IAffectationDocuments.cs" />
+    <Compile Include="IExchangeAutorization.cs" />
+    <Compile Include="IExchangeFile.cs" />
+    <Compile Include="IExchangeFlA.cs" />
+    <Compile Include="IExchangeReview.cs" />
+    <Compile Include="IFolioSeguimiento.cs" />
+    <Compile Include="IQuote.cs" />
+    <Compile Include="Quote.cs" />
+    <Compile Include="ReportAccess.cs" />
+    <Compile Include="ReviewExchange.cs" />
+    <Compile Include="IReviewExchange.cs" />
+    <Compile Include="PartListExchange.cs" />
+    <Compile Include="IPartListExchange.cs" />
+    <Compile Include="SalesAutorization.cs" />
+    <Compile Include="TaskAutorization.cs" />
+    <Compile Include="TaskData.cs" />
+    <Compile Include="ITaskData.cs" />
+    <Compile Include="IActionRol.cs" />
+    <Compile Include="IMenu.cs" />
+    <Compile Include="Menu.cs" />
+    <Compile Include="MenuRol.cs" />
+    <Compile Include="TaskGroup.cs" />
+    <Compile Include="ITaskGroup.cs" />
+    <Compile Include="DataType.cs" />
+    <Compile Include="iDataType.cs" />
+    <Compile Include="Group.cs" />
+    <Compile Include="IGroup.cs" />
+    <Compile Include="PartList.cs" />
+    <Compile Include="IPartList.cs" />
+    <Compile Include="IRol.cs" />
+    <Compile Include="Priority.cs" />
+    <Compile Include="IPriority.cs" />
+    <Compile Include="Plant.cs" />
+    <Compile Include="IPlant.cs" />
+    <Compile Include="IClient.cs" />
+    <Compile Include="Employed.cs" />
+    <Compile Include="IEmployed.cs" />
+    <Compile Include="LockingType.cs" />
+    <Compile Include="ILockingType.cs" />
+    <Compile Include="IReviewType.cs" />
+    <Compile Include="ReviewType.cs" />
+    <Compile Include="IAffectationType.cs" />
+    <Compile Include="Exchange.cs" />
+    <Compile Include="ExchangeType.cs" />
+    <Compile Include="IArea.cs" />
+    <Compile Include="IData.cs" />
+    <Compile Include="IExchange.cs" />
+    <Compile Include="IExchangeType.cs" />
+    <Compile Include="IReason.cs" />
+    <Compile Include="ITask.cs" />
+    <Compile Include="ITaskExchange.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reason.cs" />
+    <Compile Include="Task.cs" />
+    <Compile Include="TaskExchange.cs" />
+    <Compile Include="User.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="favicon.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

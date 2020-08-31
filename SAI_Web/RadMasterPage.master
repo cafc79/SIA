@@ -1,0 +1,101 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="RadMasterPage.master.cs"
+    Inherits="MasterPage" %>
+
+<%@ Register TagPrefix="telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI, Version=2012.1.215.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4" %>
+<%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <title>SAI DS</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="Styles/BocarStyle.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/site.css" rel="stylesheet" type="text/css" />
+</head>
+<body style="margin-top: auto">
+    <div class="page">
+        <form id="form1" runat="server" style="margin-top: auto">
+        <telerik:RadScriptManager ID="RadScriptManager1" runat="server">
+            <Scripts>
+                <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.Core.js">
+                </asp:ScriptReference>
+                <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.jQuery.js">
+                </asp:ScriptReference>
+                <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.jQueryInclude.js">
+                </asp:ScriptReference>
+            </Scripts>
+        </telerik:RadScriptManager>
+        <br />
+        <header class="container">
+            <div id="box">
+                <table style="width: 100%; height: 100%;">
+                    <tr style="width: 100%; vertical-align: top">
+                        <td valign="top" colspan="3" style="background-image: url(img/ExtremoDerecho.jpg);
+                            background-repeat: repeat-x">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:Image ID="currentUser" runat="server" ImageUrl="~/Img/user.png" Width="36" Height="36" />
+                        </td>
+                        <td align="center" width="120%">
+                            <telerik:RadMenu ID="MenuHorizontal" runat="server" EnableRoundedCorners="True" EnableShadows="True"
+                                EnableTextHTMLEncoding="True" Skin="Metro">
+                            </telerik:RadMenu>
+                            <div class="breadcrumb">
+                                <telerik:RadSiteMap ID="BreadCrumbSiteMap" runat="server" DataTextField="Text" DataNavigateUrlField="NavigateUrl">
+                                    <DefaultLevelSettings ListLayout-RepeatDirection="Horizontal" SeparatorText="/" Layout="Flow" />
+                                </telerik:RadSiteMap>
+                                <h3>
+                                    <asp:Literal runat="server" ID="PageTitleLiteral" /></h3>
+                            </div>
+                        </td>
+                        <td>
+                            <asp:ImageButton ID="Image1" runat="server" ImageUrl="~/Img/system-log-out.png" Width="36"
+                                Height="36" ToolTip="Salir del Sistema" PostBackUrl="~/Services/Logout.ashx" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </header>
+        <table style="width: 100%; height: 100%;">
+            <tr>
+                <td>
+                </td>
+                <td>
+                    <telerik:RadSplitter ID="RadSplitter1" runat="server" Skin="Metro" Height="900" Width="1100">
+                        <telerik:RadPane ID="LeftPane" runat="server" Width="22px" Scrolling="none">
+                            <telerik:RadSlidingZone ID="SlidingZone1" runat="server" Width="22px">
+                                <telerik:RadSlidingPane ID="RadSlidingPane1" runat="server" MinWidth="120" Title="Menu"
+                                    Width="210px">
+                                    <asp:Menu ID="ChildrenMenu" runat="server" BackColor="#B5C7DE" Font-Names="Verdana"
+                                        Font-Size="XX-Small" ForeColor="#284E98" StaticSubMenuIndent="10px" Width="148px">
+                                        <StaticSelectedStyle BackColor="#BBC6BF" BorderColor="#9999FF" />
+                                        <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                                        <DynamicHoverStyle BackColor="#284E98" ForeColor="White" />
+                                        <DynamicMenuStyle BackColor="#B5C7DE" />
+                                        <DynamicSelectedStyle BackColor="#507CD1" />
+                                        <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                                        <StaticHoverStyle BackColor="#284E98" ForeColor="White" />
+                                    </asp:Menu>
+                                </telerik:RadSlidingPane>
+                            </telerik:RadSlidingZone>
+                        </telerik:RadPane>
+                        <telerik:RadPane ID="MiddlePane1" runat="server" MinWidth="500">
+                            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </telerik:RadPane>
+                    </telerik:RadSplitter>
+                </td>
+                <td>
+                    <telerik:RadNotification ID="RadNotification2" runat="server" Skin="Telerik">
+                    </telerik:RadNotification>
+                </td>
+            </tr>
+        </table>
+        </form>
+    </div>
+</body>
+</html>
