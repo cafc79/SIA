@@ -132,13 +132,29 @@
                                                 <tr>
                                                     <td>
                                                         <table style="width: 100%;">
+                                                             <tr>
+                                                                <td width="120px">
+                                                                    <asp:Label ID="Label1" runat="server" Text="Buscar:"></asp:Label>
+                                                                </td>
+                                                                <td>
+                                                                    
+                                                                    <asp:RadioButtonList ID="RadioButtonList1" runat="server" AutoPostBack="True" 
+                                                                        onselectedindexchanged="RadioButtonList1_SelectedIndexChanged" 
+                                                                        RepeatDirection="Horizontal">
+                                                                        <asp:ListItem Selected="True" Value="1">Descripcion</asp:ListItem>
+                                                                        <asp:ListItem Value="2">No Bocar</asp:ListItem>
+                                                                        <asp:ListItem Value="3">No Cliente</asp:ListItem>
+                                                                    </asp:RadioButtonList>
+                                                                    
+                                                                </td>
+                                                            </tr>
                                                             <tr>
                                                                 <td width="120px">
                                                                     <asp:Label ID="lblPartListExchangePart" runat="server" Text="Parte:"></asp:Label>
                                                                 </td>
                                                                 <td>
                                                                     <telerik:RadComboBox ID="ddlPartListExchangePartList" runat="server" DataSourceID="sqlDSddlPartList"
-                                                                        DataTextField="sDescription" DataValueField="iIdPart" Width="300px" AutoPostBack="True"
+                                                                        DataTextField="sDesc1" DataValueField="iIdPart" Width="300px" AutoPostBack="True"
                                                                         EnableVirtualScrolling="True" Skin="Vista" OpenDropDownOnLoad="True" 
                                                                         AllowCustomText="True" MarkFirstMatch="True">
                                                                     </telerik:RadComboBox>

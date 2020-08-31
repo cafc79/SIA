@@ -133,7 +133,12 @@ public partial class Autorizacion : System.Web.UI.Page
 	private void Menu_PartList(string title, int iIdExchange)
 	{
 		if (iIdExchange > 0)
-			Response.Redirect("ListaPartes.aspx?ex=" + iIdExchange);
+		{
+			string page = string.Empty;
+			if (Request.QueryString["page"] == "Exchange")
+				page = "&page=Exchange";
+			Response.Redirect("ListaPartes.aspx?ex=" + iIdExchange + page);
+		}
 		else
 			util.ErroDisplay(3, "No se ha Seleccionado Ningún Prefolio", ref lblMessage);
 	}
@@ -141,7 +146,12 @@ public partial class Autorizacion : System.Web.UI.Page
 	private void Menu_Timming(string sAction, int iIdExchange)
 	{
 		if (iIdExchange > 0)
-			Response.Redirect("Timming.aspx?mod=" + sAction + "&ex=" + iIdExchange);
+		{
+			string page = string.Empty;
+			if (Request.QueryString["page"] == "Exchange")
+				page = "&page=Exchange";
+			Response.Redirect("Timming.aspx?mod=" + sAction + "&ex=" + iIdExchange + page);
+		}
 		else
 			util.ErroDisplay(3, "No se ha Seleccionado Ningún Prefolio", ref lblMessage);
 	}
@@ -157,7 +167,12 @@ public partial class Autorizacion : System.Web.UI.Page
 	private void Menu_Exchange(string sAction, int iIdExchange)
 	{
 		if (iIdExchange > 0)
-			Response.Redirect(ViewState["UrlReference"] + "?mod=" + sAction + "&ex=" + iIdExchange );
+		{
+			string page = string.Empty;
+			if (Request.QueryString["page"] == "Exchange")
+				page = "&page=Exchange";
+			Response.Redirect(ViewState["UrlReference"] + "?mod=" + sAction + "&ex=" + iIdExchange + page);
+		}
 		else
 			util.ErroDisplay(3, "No se ha Seleccionado Ningún Prefolio", ref lblMessage);
 	}
@@ -215,8 +230,10 @@ public partial class Autorizacion : System.Web.UI.Page
 		var eact = eam.getExchangeAutorizationById(iIdExchange);
 		if (eact.iIdExchangeAutorization > 0)
 		{
-			ddlAdminAutorization.SelectedValue = eact.iIdReviewTypeAdm.ToString();
-			ddlEngenerAutorization.SelectedValue = eact.iIdReviewTypeEng.ToString();
+			if (ddlAdminAutorization.Items.FindItemByValue(eact.iIdReviewTypeAdm.ToString()) != null)
+				ddlAdminAutorization.SelectedValue = eact.iIdReviewTypeAdm.ToString();
+			if (ddlEngenerAutorization.Items.FindItemByValue(eact.iIdReviewTypeEng.ToString()) != null)
+				ddlEngenerAutorization.SelectedValue = eact.iIdReviewTypeEng.ToString();
 			txtObsEngProduct.Text = eact.sEngObsevations;
 			txtObsEngManager.Text = eact.sObsevations;
 			txtObsEngManager.ReadOnly = true;

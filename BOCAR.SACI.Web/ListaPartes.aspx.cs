@@ -216,4 +216,11 @@ public partial class ListaPartes : System.Web.UI.Page
 		ddlPartListExchangeAffectation.DataBind();
 		ddlPartListExchangePartList.DataBind();
 	}
+
+	protected void RadioButtonList1_SelectedIndexChanged(object sender, EventArgs e)
+	{
+
+		ddlPartListExchangePartList.DataTextField = "sDesc" + ((RadioButtonList)sender).SelectedValue;
+		ddlPartListExchangePartList.DataBind();
+	}
 }

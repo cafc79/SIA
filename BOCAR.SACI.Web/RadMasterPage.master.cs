@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Web;
 using System.Web.UI.WebControls;
 
@@ -19,7 +20,6 @@ public partial class MasterPage : System.Web.UI.MasterPage
 				}
 				catch (Exception LoExcepcion)
 				{
-					//Response.Redirect("Services/Logout.ashx");
 					throw new ApplicationException(string.Format("Ocurrió el siguiente error: \n{0}", LoExcepcion.Message), LoExcepcion);
 				}
 			}
@@ -40,9 +40,8 @@ public partial class MasterPage : System.Web.UI.MasterPage
 			var swap = new BOCAR.SACI.Business.MenuRolManager();
 			Session["MenuH"] = swap.getAllMenuRol(iRol);
 		}
-		foreach (BOCAR.SACI.Data.menuRolCompositeType mt in menu)
+		foreach (var miNuevo in menu.Select(mt => new MenuItem { NavigateUrl = mt.sModulo, Text = mt.sDescription, Value = mt.iIdMenu.ToString(), Selectable = true }))
 		{
-			var miNuevo = new MenuItem { NavigateUrl = mt.sModulo, Text = mt.sDescription, Value = mt.iIdMenu.ToString(), Selectable = true };
 			MenuHorizontal.Items.Add(miNuevo);
 		}
 	}

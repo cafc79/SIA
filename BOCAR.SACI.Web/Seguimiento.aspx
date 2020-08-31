@@ -7,75 +7,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <telerik:RadScriptManager runat="server" ID="RadScriptManager1">
     </telerik:RadScriptManager>
-    <telerik:RadAjaxManager ID="RadAjaxManager1" runat="server" EnableEmbeddedScripts="False"
-        EnablePageHeadUpdate="False" UpdatePanelsRenderMode="Inline">
-        <AjaxSettings>
-            <telerik:AjaxSetting AjaxControlID="imbSerach">
-                <UpdatedControls>
-                    <telerik:AjaxUpdatedControl ControlID="txtSrchFolio" />
-                    <telerik:AjaxUpdatedControl ControlID="gridFolio" />
-                    <telerik:AjaxUpdatedControl ControlID="lblCurrentFolio" />
-                    <telerik:AjaxUpdatedControl ControlID="gridTareas" />
-                    <telerik:AjaxUpdatedControl ControlID="gridReporte" />
-                </UpdatedControls>
-            </telerik:AjaxSetting>
-            <telerik:AjaxSetting AjaxControlID="btnDisplayOpSearch">
-                <UpdatedControls>
-                    <telerik:AjaxUpdatedControl ControlID="rbListOpSearch" LoadingPanelID="RadAjaxLoadingPanel1"
-                        UpdatePanelRenderMode="Inline" />
-                    <telerik:AjaxUpdatedControl ControlID="btnHideOpSearch" LoadingPanelID="RadAjaxLoadingPanel1"
-                        UpdatePanelRenderMode="Inline" />
-                </UpdatedControls>
-            </telerik:AjaxSetting>
-            <telerik:AjaxSetting AjaxControlID="btnHideOpSearch">
-                <UpdatedControls>
-                    <telerik:AjaxUpdatedControl ControlID="btnDisplayOpSearch" LoadingPanelID="RadAjaxLoadingPanel1"
-                        UpdatePanelRenderMode="Inline" />
-                    <telerik:AjaxUpdatedControl ControlID="rbListOpSearch" LoadingPanelID="RadAjaxLoadingPanel1"
-                        UpdatePanelRenderMode="Inline" />
-                </UpdatedControls>
-            </telerik:AjaxSetting>
-            <telerik:AjaxSetting AjaxControlID="gridFolio">
-                <UpdatedControls>
-                    <telerik:AjaxUpdatedControl ControlID="lblCurrentFolio" UpdatePanelRenderMode="Block" />
-                    <telerik:AjaxUpdatedControl ControlID="comboTareas" />
-                    <telerik:AjaxUpdatedControl ControlID="gridTareas" LoadingPanelID="RadAjaxLoadingPanel1"
-                        UpdatePanelRenderMode="Block" />
-                    <telerik:AjaxUpdatedControl ControlID="gridReporte" LoadingPanelID="RadAjaxLoadingPanel1"
-                        UpdatePanelRenderMode="Inline" />
-                    <telerik:AjaxUpdatedControl ControlID="txtDescDocumento" />
-                    <telerik:AjaxUpdatedControl ControlID="RadAsyncUpload1" />
-                    <telerik:AjaxUpdatedControl ControlID="btnGraba" />
-                </UpdatedControls>
-            </telerik:AjaxSetting>
-            <telerik:AjaxSetting AjaxControlID="comboTareas">
-                <UpdatedControls>
-                    <telerik:AjaxUpdatedControl ControlID="gridTareas" />
-                    <telerik:AjaxUpdatedControl ControlID="gridReporte" LoadingPanelID="RadAjaxLoadingPanel1" />
-                </UpdatedControls>
-            </telerik:AjaxSetting>
-            <telerik:AjaxSetting AjaxControlID="gridTareas">
-                <UpdatedControls>
-                    <telerik:AjaxUpdatedControl ControlID="gridReporte" UpdatePanelRenderMode="Block" />
-                    <telerik:AjaxUpdatedControl ControlID="txtDescDocumento" />
-                    <telerik:AjaxUpdatedControl ControlID="RadAsyncUpload1" />
-                    <telerik:AjaxUpdatedControl ControlID="btnGraba" />
-                </UpdatedControls>
-            </telerik:AjaxSetting>
-            <telerik:AjaxSetting AjaxControlID="gridReporte">
-            </telerik:AjaxSetting>
-            <telerik:AjaxSetting AjaxControlID="btnGraba">
-                <UpdatedControls>
-                    <telerik:AjaxUpdatedControl ControlID="gridReporte" />
-                    <telerik:AjaxUpdatedControl ControlID="txtDescDocumento" />
-                    <telerik:AjaxUpdatedControl ControlID="RadAsyncUpload1" />
-                </UpdatedControls>
-            </telerik:AjaxSetting>
-        </AjaxSettings>
-    </telerik:RadAjaxManager>
-    <telerik:RadAjaxLoadingPanel ID="RadAjaxLoadingPanel1" runat="server" AnimationDuration="10"
-        EnableEmbeddedScripts="False" Skin="Web20" Transparency="25">
-    </telerik:RadAjaxLoadingPanel>
+	<telerik:RadAjaxPanel ID="RadAjaxPanel1" runat="server">
+	
     <table style="border-width: thin; border-style: none; width: 100%; vertical-align: top;
         text-align: center;">
         <tr>
@@ -418,4 +351,5 @@
     </asp:SqlDataSource>
     <asp:SqlDataSource ID="sqlDSTareas" runat="server" ConnectionString="<%$ ConnectionStrings:SACIConnectionString %>"
         SelectCommand="sp_selectCatTask" SelectCommandType="StoredProcedure" />
+				</telerik:RadAjaxPanel>
 </asp:Content>

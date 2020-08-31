@@ -171,7 +171,7 @@ public partial class Solicitud : System.Web.UI.Page
 
 	private void Menu_Analize(string title, int iIdExchange)
 	{
-		if (Menu_Generic(title, iIdExchange, 6))
+		if (Menu_Generic(title, iIdExchange, 1))
 		{
 			if (string.IsNullOrEmpty(Exchange.sFolio) || Exchange.sFolio == "0")
 			{
@@ -189,7 +189,7 @@ public partial class Solicitud : System.Web.UI.Page
 
 	private void Menu_Documents(string title, int iIdExchange)
 	{
-		if (Menu_Generic(title, iIdExchange, 7))
+		if (Menu_Generic(title, iIdExchange, 2))
 			gvDocuments.DataBind();
 	}
 	#endregion

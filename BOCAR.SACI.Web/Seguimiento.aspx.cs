@@ -13,7 +13,7 @@ using BO = BOCAR.SACI.Business;
 public partial class Seguimiento : System.Web.UI.Page
 {
 	private Utilerias util;
-	const string field = "IdFolio";
+	private const string field = "IdFolio";
 
 	protected void Page_Load(object sender, EventArgs e)
 	{
@@ -23,19 +23,20 @@ public partial class Seguimiento : System.Web.UI.Page
 			if (!Page.IsPostBack)
 			{
 				util.LoadMenu(Master.Page.Request.Url.Segments[Master.Page.Request.Url.Segments.Length - 1],
-										BOCAR.SACI.Business.SecurityManager.ObtenerUsuario(HttpContext.Current).IdRol, ref menuSolicitud);
+				              BOCAR.SACI.Business.SecurityManager.ObtenerUsuario(HttpContext.Current).IdRol, ref menuSolicitud);
 			}
 		}
 		catch (ArgumentNullException ex)
 		{
+			Alert.Show(ex.Message, this.Page);
 			Alert.Denegado(this.Page);
 		}
 		catch (Exception ex)
 		{
+			Alert.Show(ex.Message, this.Page);
 			//Response.Redirect("Services/Logout.ashx");
 		}
 	}
-
 
 	protected void btnHideOpSearch_Click(object sender, ImageClickEventArgs e)
 	{
@@ -92,6 +93,7 @@ public partial class Seguimiento : System.Web.UI.Page
 	}
 
 	#region Folio
+
 	protected void imbSearch_Click(object sender, ImageClickEventArgs e)
 	{
 		try
@@ -101,7 +103,7 @@ public partial class Seguimiento : System.Web.UI.Page
 			lblCurrentFolio.Text = string.Empty;
 			if (!string.IsNullOrEmpty(txtSrchFolio.Text))
 				gridFolio.DataBind();
-				//DatosInGrid(gridFolio, folios.GetFolios(txtSrchFolio.Text.Trim(), rbListOpSearch.SelectedValue));
+			//DatosInGrid(gridFolio, folios.GetFolios(txtSrchFolio.Text.Trim(), rbListOpSearch.SelectedValue));
 		}
 		catch (Exception ex)
 		{
@@ -125,7 +127,7 @@ public partial class Seguimiento : System.Web.UI.Page
 			{
 				IDictionary itemValues = new Dictionary<object, object>();
 				//Se toma el item del row
-				var item = (Telerik.Web.UI.GridDataItem)e.Item;
+				var item = (Telerik.Web.UI.GridDataItem) e.Item;
 				item.ExtractValues(itemValues);
 				//Tomando el indice del item y el campo, se pasan los valores a una estructura llave-valor
 				itemValues[field] = item.OwnerTableView.DataKeyValues[item.ItemIndex][field].ToString();
@@ -146,9 +148,11 @@ public partial class Seguimiento : System.Web.UI.Page
 			}
 		}
 	}
+
 	#endregion
 
 	#region Tareas
+
 	protected void comboTareas_SelectedIndexChanged(object sender, RadComboBoxSelectedIndexChangedEventArgs e)
 	{
 		var folios = new BO.FolioSeguimiento();
@@ -173,11 +177,13 @@ public partial class Seguimiento : System.Web.UI.Page
 		{
 			ViewState["IdTarea"] = dataItem["IdTarea"].Text;
 			ViewState["IdTareaExchange"] = dataItem["fiid_task_exchange"].Text;
-			DatosInGrid(gridReporte, folios.GetArchivosByTareas(int.Parse(ViewState["IdTarea"].ToString()), int.Parse(ViewState["IdTareaExchange"].ToString())));
+			DatosInGrid(gridReporte,
+			            folios.GetArchivosByTareas(int.Parse(ViewState["IdTarea"].ToString()),
+			                                       int.Parse(ViewState["IdTareaExchange"].ToString())));
 			for (int i = 0; i <= gridTareas.Items.Count - 1; i++)
 			{
-				if (((RadioButton)gridTareas.Items[i].FindControl("rbtnSelect")).Checked)
-					((RadioButton)gridTareas.Items[i].FindControl("rbtnSelect")).Checked = false;
+				if (((RadioButton) gridTareas.Items[i].FindControl("rbtnSelect")).Checked)
+					((RadioButton) gridTareas.Items[i].FindControl("rbtnSelect")).Checked = false;
 			}
 			chkBox.Checked = true;
 			txtDescDocumento.Enabled = true;
@@ -197,13 +203,13 @@ public partial class Seguimiento : System.Web.UI.Page
 			var dataBoundItem = e.Item as GridDataItem;
 			if (!string.IsNullOrEmpty(dataBoundItem["FechaTermino"].Text.Replace("&nbsp;", string.Empty).Trim()))
 			{
-				((ImageButton)dataBoundItem["TaskFinished"].FindControl("ibtnFolio")).ImageUrl = "~/Img/user_accept.png";
-				((ImageButton)dataBoundItem["TaskFinished"].FindControl("ibtnFolio")).ToolTip = dataBoundItem["FechaTermino"].Text;
-				((ImageButton)dataBoundItem["TaskFinished"].FindControl("ibtnFolio")).CommandName = string.Empty;
+				((ImageButton) dataBoundItem["TaskFinished"].FindControl("ibtnFolio")).ImageUrl = "~/Img/user_accept.png";
+				((ImageButton) dataBoundItem["TaskFinished"].FindControl("ibtnFolio")).ToolTip = dataBoundItem["FechaTermino"].Text;
+				((ImageButton) dataBoundItem["TaskFinished"].FindControl("ibtnFolio")).CommandName = string.Empty;
 			}
 			if (!string.IsNullOrEmpty(dataBoundItem["EnvioMail"].Text.Replace("&nbsp;", string.Empty).Trim()))
 			{
-				((ImageButton)dataBoundItem["EnvioMail"].FindControl("EnvioMail")).ToolTip = dataBoundItem["fd_sendDate"].Text;
+				((ImageButton) dataBoundItem["EnvioMail"].FindControl("EnvioMail")).ToolTip = dataBoundItem["fd_sendDate"].Text;
 			}
 		}
 	}
@@ -219,11 +225,12 @@ public partial class Seguimiento : System.Web.UI.Page
 			{
 				IDictionary itemValues = new Dictionary<object, object>();
 				//Se toma el item del row
-				var item = (Telerik.Web.UI.GridDataItem)e.Item;
+				var item = (Telerik.Web.UI.GridDataItem) e.Item;
 				item.ExtractValues(itemValues);
 				HttpContext contexto = HttpContext.Current;
-				folios.Set_FinishTask(BO.SecurityManager.ObtenerUsuario(contexto), gridTareas.Items[item.ItemIndex]["fiid_employed"].Text,
-															int.Parse(gridTareas.Items[item.ItemIndex]["fiid_task_exchange"].Text));
+				folios.Set_FinishTask(BO.SecurityManager.ObtenerUsuario(contexto),
+				                      gridTareas.Items[item.ItemIndex]["fiid_employed"].Text,
+				                      int.Parse(gridTareas.Items[item.ItemIndex]["fiid_task_exchange"].Text));
 				DatosInGrid(gridTareas, folios.GetTareasByFolios(int.Parse(ViewState["IdFolio"].ToString()), null));
 			}
 			catch (AccessViolationException ave)
@@ -240,6 +247,7 @@ public partial class Seguimiento : System.Web.UI.Page
 	#endregion
 
 	#region Documentos
+
 	protected void btnGrabar_Click(object sender, EventArgs e)
 	{
 		var folios = new BO.FolioSeguimiento();
@@ -249,14 +257,16 @@ public partial class Seguimiento : System.Web.UI.Page
 			util.GetActionMenu(menuSolicitud.SelectedItem.Value);
 			string pathSave = ConfigurationManager.AppSettings["rutaSeguimiento"] + "\\" + ViewState[field].ToString();
 			var dt = folios.Get_RegFile(int.Parse(ViewState[field].ToString()), int.Parse(ViewState["IdTarea"].ToString()),
-												 txtDescDocumento.Text, RadAsyncUpload1.UploadedFiles[0].FileName, pathSave);
+			                            txtDescDocumento.Text, RadAsyncUpload1.UploadedFiles[0].FileName, pathSave);
 			registro = int.Parse(dt.Rows[0][0].ToString());
 			if (registro > 0)
 			{
 				util.AccessDocument(pathSave);
 				RadAsyncUpload1.UploadedFiles[0].SaveAs(dt.Rows[0][1].ToString());
 				ClearGrid(gridReporte);
-				DatosInGrid(gridReporte, folios.GetArchivosByTareas(int.Parse(ViewState["IdTarea"].ToString()), int.Parse(ViewState["IdTareaExchange"].ToString())));
+				DatosInGrid(gridReporte,
+				            folios.GetArchivosByTareas(int.Parse(ViewState["IdTarea"].ToString()),
+				                                       int.Parse(ViewState["IdTareaExchange"].ToString())));
 				RadAsyncUpload1.UploadedFiles.Clear();
 				txtDescDocumento.Text = string.Empty;
 			}
@@ -268,7 +278,7 @@ public partial class Seguimiento : System.Web.UI.Page
 		}
 		catch (IOException ioe)
 		{
-			Alert.Show(ioe.Message, this.Page);
+			Alert.Show(ioe.Message, this.Page);	
 		}
 		catch (AccessViolationException ave)
 		{
@@ -288,20 +298,24 @@ public partial class Seguimiento : System.Web.UI.Page
 			{
 				IDictionary itemValues = new Dictionary<object, object>();
 				//Se toma el item del row
-				var item = (Telerik.Web.UI.GridDataItem)e.Item;
+				var item = (Telerik.Web.UI.GridDataItem) e.Item;
 				item.ExtractValues(itemValues);
 				string ruta = string.Empty;
 				HttpContext contexto = HttpContext.Current;
-				if (util.DownloadFile(ViewState[field].ToString(), 2, gridReporte.Items[item.ItemIndex]["fvaddress_file"].Text, ref ruta))
+				if (util.DownloadFile(ViewState[field].ToString(), 2, gridReporte.Items[item.ItemIndex]["fvaddress_file"].Text,
+				                      ref ruta))
 					Response.Redirect(ruta, false);
 				else
 					Alert.Show("No se encuentra el archivo en la ruta especificada.", this.Page);
 			}
 			catch (Exception ex)
 			{
-				Alert.Show("No se encuentra el archivo en la ruta especificada o no hay forma de obtener la informacón asociada al archivo solicitado", this.Page);
+				Alert.Show(
+					"No se encuentra el archivo en la ruta especificada o no hay forma de obtener la informacón asociada al archivo solicitado",
+					this.Page);
 			}
 		}
 	}
+
 	#endregion
 }

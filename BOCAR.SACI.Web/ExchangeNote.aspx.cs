@@ -77,10 +77,10 @@ public partial class ExchangeNote : System.Web.UI.Page
 					Menu_Autorization(sAction, "Evaluación de Requerimiento", iIdExchange);
 					break;
 				case "imTiming":
-					Menu_Timming("Timing Inicial", iIdExchange, "imTiming");
+					Menu_Timming("Timing Inicial", iIdExchange, sAction);
 					break;
 				case "imManAut":
-					Menu_Timming("Autorización de Gerencias", iIdExchange, "imManAut");
+					Menu_Timming("Autorización de Gerencias", iIdExchange, sAction);
 					break;
 				case "imTimingFinal":
 					Menu_TimmingFinal("Timing Final", iIdExchange);
@@ -655,6 +655,7 @@ public partial class ExchangeNote : System.Web.UI.Page
 		pnTimingEndUpdate.Visible = false;
 		txtTimingEnd.Text = "";
 	}
+	
 	protected void btnTimmingEndUpdate_Click(object sender, EventArgs e)
 	{
 		try
