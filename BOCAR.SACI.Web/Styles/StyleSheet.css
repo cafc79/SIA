@@ -1,0 +1,28 @@
+﻿body
+{
+	font-size: small;
+	font-family: Verdana;
+}
+
+.ApplicationTitle
+{
+	font-family: Verdana;
+	font-size: 17pt;
+	font-weight: bold;
+	color: #FEFEFE;
+	text-align: left;
+	vertical-align: middle;
+}
+
+.MenuBar
+{
+	background: #F5E3B5;
+	color: #F49D10;
+	text-align: left;
+	vertical-align: top;
+}
+
+.MyCalendar .ajax__calendar_container {
+    border:1px solid #646464;
+    background-color:Silver;
+    color: red;

@@ -1,0 +1,32 @@
+﻿table {
+		
+		border-collapse:separate;
+		background:#EFF4FB;
+		font:0.8em/145% 'Trebuchet MS',helvetica,arial,verdana;
+		font-size: 14px;		
+		font-weight:bold;
+		color: #333;
+		border-style:solid;
+}
+
+thead td {
+		background:#EFF4FB;
+		color:#FE2E2E;
+		border-style:double;
+		border-color:Silver;
+		font: normal 11px georgia, verdana, arial, helvetica, sans-serif;
+		border-style:inherit;
+		text-align: center;
+		font-size:large;
+		font-weight: bold;
+		font-style:inherit;
+		color: #B40404;
+		background: #EFF4FB;		
+}
+
+.MyCalendar .ajax__calendar_container {
+    border:1px solid #646464;
+    background-color:Silver;
+    color: red;
+
+
